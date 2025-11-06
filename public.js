@@ -33,12 +33,12 @@ module.exports = {
       console.log("📁 [DEBUG] Current selfmode.json:", data);
 
       // 🔐 Match sender with owner
-      if (senderNum !== data.owner_sender) {
-        return reply("🚫 *You're not my Owner!*\nOnly owner can use `.public` command.\n\n> 𝗧𝗔𝗬𝗬𝗔𝗕 ❦ ✓");
-      }
+     // if (senderNum !== data.owner_sender) {
+        //return reply("🚫 *You're not my Owner!*\nOnly owner can use `.public` command.\n\n> 𝗧𝗔𝗬𝗬𝗔𝗕 ❦ ✓");
+    //  }
 
       // 🔓 Set selfmode to false (public mode)
-      data.enabled = false;
+      data.enabled = true;
       fs.writeFileSync(configPath, JSON.stringify(data, null, 2));
       return reply("🔓 *Public mode activated!*\nEveryone can use the bot now.\n\n> 𝗧𝗔𝗬𝗬𝗔𝗕 ❦ ✓");
 
